@@ -30,8 +30,8 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^9.1.2",
-    "@angular/core": "^9.1.2",
-    "powerbi-client": "^2.11.0"
+    "@angular/common": "^12.2.7",
+    "@angular/core": "^12.2.7",
+    "powerbi-client": "^2.18.5"
   }
 }
