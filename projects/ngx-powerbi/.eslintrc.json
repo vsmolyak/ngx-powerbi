@@ -1,0 +1,78 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "excludedFiles": ["e2e/**/*"],
+      "parserOptions": {
+        "project": [
+          "projects/ngx-powerbi/tsconfig.lib.json",
+          "projects/ngx-powerbi/tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "ngx",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "ngx",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/member-ordering": "off",
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "dot-notation": "error",
+        "id-denylist": [
+          "error",
+          "any",
+          "Number",
+          "number",
+          "String",
+          "string",
+          "Boolean",
+          "boolean",
+          "Undefined",
+          "undefined"
+        ],
+        "import/order": "off",
+        "indent": "error",
+        "no-empty-function": "off",
+        "no-shadow": "warn",
+        "no-unused-expressions": "error",
+        "no-use-before-define": "off",
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "semi": "error"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {}
+    }
+  ]
+}

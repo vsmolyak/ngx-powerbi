@@ -1,48 +1,49 @@
 import { Injectable, Optional } from '@angular/core';
 import {
-  Embed,
-  factories,
-  IEmbedConfiguration,
-  Report,
-  service as pbiService,
-  Tile
+    Embed,
+    factories,
+    IEmbedConfiguration,
+    Report,
+    service as pbiService,
+    Tile
 } from 'powerbi-client';
 
 export function powerBiServiceFactory() {
-  return new pbiService.Service(
-    factories.hpmFactory,
-    factories.wpmpFactory,
-    factories.routerFactory
-  );
+    return new pbiService.Service(
+        factories.hpmFactory,
+        factories.wpmpFactory,
+        factories.routerFactory
+    );
 }
 
 @Injectable({
-  providedIn: 'root',
-  useFactory: powerBiServiceFactory
+    providedIn: 'root',
+    useFactory: powerBiServiceFactory
 })
 export class NgxPowerBiService {
   private powerBiCoreService: pbiService.Service;
 
   constructor(@Optional() private service?: pbiService.Service) {
-    if (!service) {
-      this.powerBiCoreService = new pbiService.Service(
-        factories.hpmFactory,
-        factories.wpmpFactory,
-        factories.routerFactory
-      );
-    } else {
-      this.powerBiCoreService = service;
-    }
+      if (!service) {
+          this.powerBiCoreService = new pbiService.Service(
+              factories.hpmFactory,
+              factories.wpmpFactory,
+              factories.routerFactory
+          );
+      } else {
+          this.powerBiCoreService = service;
+      }
   }
 
   /**
    * Creates new report
+   *
    * @param HTMLElement Parent HTML element
    * @param IEmbedConfiguration Embed configuration
    * @returns Embed Embedded object
    */
   createReport(element: HTMLElement, config: IEmbedConfiguration): Embed {
-    return this.powerBiCoreService.createReport(element, config);
+      return this.powerBiCoreService.createReport(element, config);
   }
 
   /**
@@ -55,7 +56,7 @@ export class NgxPowerBiService {
    * @returns Embed Embedded object
    */
   embed(element: HTMLElement, config: IEmbedConfiguration): Embed {
-    return this.powerBiCoreService.embed(element, config);
+      return this.powerBiCoreService.embed(element, config);
   }
 
   /**
@@ -69,7 +70,7 @@ export class NgxPowerBiService {
    * @returns Embed Embedded object
    */
   load(element: HTMLElement, config: IEmbedConfiguration): Embed {
-    return this.powerBiCoreService.load(element, config);
+      return this.powerBiCoreService.load(element, config);
   }
 
   /**
@@ -81,7 +82,7 @@ export class NgxPowerBiService {
    * required data is available when the handler is called.
    */
   enableAutoEmbed(): void {
-    return this.powerBiCoreService.enableAutoEmbed();
+      return this.powerBiCoreService.enableAutoEmbed();
   }
 
   /**
@@ -91,7 +92,7 @@ export class NgxPowerBiService {
    * @returns (Report | Tile) Embedded report/tile object
    */
   get(element: HTMLElement): Embed {
-    return this.powerBiCoreService.get(element);
+      return this.powerBiCoreService.get(element);
   }
 
   /**
@@ -101,7 +102,7 @@ export class NgxPowerBiService {
    * @returns (Report | Tile) Embedded report/tile object
    */
   findById(uniqueId: string): Report | Tile {
-    return this.powerBiCoreService.find(uniqueId);
+      return this.powerBiCoreService.find(uniqueId);
   }
 
   /**
@@ -113,7 +114,7 @@ export class NgxPowerBiService {
    * @returns void
    */
   reset(element: HTMLElement): void {
-    return this.powerBiCoreService.reset(element);
+      return this.powerBiCoreService.reset(element);
   }
 
   /**
@@ -122,7 +123,7 @@ export class NgxPowerBiService {
    * @param IEvent<any> event
    */
   handleTileEvents(event: pbiService.IEvent<any>): void {
-    return this.powerBiCoreService.handleTileEvents(event);
+      return this.powerBiCoreService.handleTileEvents(event);
   }
 
   /**
@@ -133,9 +134,9 @@ export class NgxPowerBiService {
    * @param HTMLElement [element=undefined]
    */
   preload(
-    config: IEmbedConfiguration,
-    element: HTMLElement
+      config: IEmbedConfiguration,
+      element: HTMLElement
   ): HTMLIFrameElement {
-    return this.powerBiCoreService.preload(config, element);
+      return this.powerBiCoreService.preload(config, element);
   }
 }
