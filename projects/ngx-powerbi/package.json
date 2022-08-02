@@ -1,14 +1,17 @@
 {
-  "name": "@vsmolyak_newfire/ngx-powerbi",
-  "version": "3.1.0",
+  "name": "ngx-powerbi",
+  "version": "3.0.0",
   "description": "TypeScript library for embedding Power BI assets (reports/dashboards/tiles) in your application. This TypeScript library is built on top of the official powerbi-client library provided by Microsoft.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ramandeep-singh-1983/ngx-powerbi.git"
+    "url": "https://github.com/ramandeep-singh-1983/ngx-powerbi"
   },
-  "homepage": "https://medium.com/@ramandeep.singh.1983/ngx-powerbi-a-basic-typescript-wrapper-library-for-power-bi-b056150b3f25",
-  "author": "Ramandeep Singh <ramandeep.singh.1983@gmail.com>",
+  "homepage" :"https://medium.com/@ramandeep.singh.1983/ngx-powerbi-a-basic-typescript-wrapper-library-for-power-bi-b056150b3f25",
+  "author": {
+    "name": "Ramandeep Singh",
+    "email": "ramandeep.singh.1983@gmail.com"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -30,13 +33,5 @@
     "@angular/common": "^12.2.7",
     "@angular/core": "^12.2.7",
     "powerbi-client": "^2.18.5"
-  },
-  "bugs": {
-    "url": "https://github.com/ramandeep-singh-1983/ngx-powerbi/issues"
-  },
-  "main": "karma.conf.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
