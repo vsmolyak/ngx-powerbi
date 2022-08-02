@@ -99,11 +99,15 @@
           }
         },
         "lint": {
-          "builder": "@angular-eslint/builder:lint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
             ]
           }
         },
@@ -148,11 +152,14 @@
           }
         },
         "lint": {
-          "builder": "@angular-eslint/builder:lint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "lintFilePatterns": [
-              "projects/ngx-powerbi/**/*.ts",
-              "projects/ngx-powerbi/**/*.html"
+            "tsConfig": [
+              "projects/ngx-powerbi/tsconfig.lib.json",
+              "projects/ngx-powerbi/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
             ]
           }
         }
@@ -161,7 +168,6 @@
   },
   "defaultProject": "pbi-app",
   "cli": {
-    "analytics": "baddc8f6-b938-46d5-91d1-ce8e184b6a06",
-    "defaultCollection": "@angular-eslint/schematics"
+    "analytics": "baddc8f6-b938-46d5-91d1-ce8e184b6a06"
   }
 }
